@@ -1,0 +1,31 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Dummy API",
+    "version": "1.0.0",
+    "description": "This is a dummy API for demonstration purposes."
+  },
+  "servers": [
+    { "url": "https://api.example.com" }
+  ],
+  "paths": {
+    "/items": {
+      "get": {
+        "summary": "Get all items",
+        "responses": {
+          "200": {
+            "description": "List of items",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
