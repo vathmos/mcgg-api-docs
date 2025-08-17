@@ -8,9 +8,9 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 import {themes as prismThemes} from 'prism-react-renderer';
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
+  title: "MCGG API",
+  tagline: "An unofficial Public API of Magic Chess : GO GO",
+  url: "https://mcgg-api-docs.vercel.app/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -51,7 +51,7 @@ const config: Config = {
         logo: {
           alt: "My Site Logo",
           src: "img/mcgg-api-dark.svg",
-          href: "/docs"
+          href: "/"
         },
         items: [
           {
@@ -201,6 +201,18 @@ plugins: [
           },
         },
       },
+    },
+  ],
+
+  [
+    '@docusaurus/plugin-client-redirects',
+    {
+      redirects: [
+        {
+          to: '/docs/mcgg/mcgg-api.info.mdx',
+          from: '/',
+        },
+      ],
     },
   ],
 ],
