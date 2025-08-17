@@ -203,18 +203,6 @@ plugins: [
       },
     },
   ],
-
-  [
-    '@docusaurus/plugin-client-redirects',
-    {
-      redirects: [
-        {
-          to: '/docs/mcgg/mcgg-api.info.mdx',
-          from: '/',
-        },
-      ],
-    },
-  ],
 ],
   themes: ["docusaurus-theme-openapi-docs"],
 };
