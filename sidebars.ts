@@ -23,7 +23,7 @@ const sidebars: SidebarsConfig = {
         title: "MCGG API",
         description:
           "This is a sample server MCGG server. You can find out more about Swagger at http://swagger.io or on irc.freenode.net, #swagger. For this sample, you can use the api key special-key to test the authorization filters.",
-        slug: "/category/mcgg-api"
+        slug: "/"
       },
       items: require("./docs/mcgg/sidebar.js")
     }

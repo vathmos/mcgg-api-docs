@@ -14,18 +14,19 @@ const config: Config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/mcgg-api-dark.svg",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "vathmos", // Usually your GitHub org/user name.
+  projectName: "mcgg-api", // Usually your repo name.
 
   presets: [
     [
       "classic",
       {
         docs: {
+          routeBasePath: "/docs",
           sidebarPath: require.resolve("./sidebars.ts"),
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
@@ -50,15 +51,16 @@ const config: Config = {
         logo: {
           alt: "My Site Logo",
           src: "img/mcgg-api-dark.svg",
+          href: "/docs"
         },
         items: [
           {
             label: "Docs",
             position: "left",
-            to: "/docs/category/mcgg-api",
+            to: "/docs",
           },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/vathmos/mcgg-api",
             label: "GitHub",
             position: "right",
           },
@@ -67,47 +69,8 @@ const config: Config = {
       footer: {
         style: "dark",
         links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} MCGG API. Built with Docusaurus.`,
       },
       prism: {
         darkTheme: prismThemes.oneDark,
@@ -219,38 +182,40 @@ const config: Config = {
       ],
     } satisfies Preset.ThemeConfig,
 
-  plugins: [
-    [
-      "docusaurus-plugin-openapi-docs",
-      {
-        id: "openapi",
-        docsPluginId: "classic",
-        config: {
-          mcgg: {
-            specPath: "openapi/mcgg.yaml",
-            outputDir: "docs/mcgg",
-            downloadUrl:
-              "https://raw.githubusercontent.com/vathmos/mcgg-api/openapi/petstore.yaml",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
-          cars: {
-            specPath: "openapi/cars.yaml",
-            outputDir: "docs/cars",
-            downloadUrl:
-              "https://raw.githubusercontent.com/vathmos/cars-api/openapi/petstore.yaml",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
-        } satisfies Plugin.PluginOptions,
+plugins: [
+  // OpenAPI Docs plugin
+  [
+    "docusaurus-plugin-openapi-docs",
+    {
+      id: "openapi",
+      docsPluginId: "classic",
+      config: {
+        mcgg: {
+          specPath: "openapi/mcgg.yaml",
+          outputDir: "docs/mcgg",
+          downloadUrl:
+            "https://raw.githubusercontent.com/vathmos/mcgg-api/openapi/petstore.yaml",
+          sidebarOptions: {
+            groupPathsBy: "tag",
+            categoryLinkSource: "tag",
+          },
+        },
       },
-    ],
+    },
   ],
 
+  [
+    '@docusaurus/plugin-client-redirects',
+    {
+      redirects: [
+        {
+          to: '/docs/mcgg/mcgg-api.info.mdx',
+          from: '/',
+        },
+      ],
+    },
+  ],
+],
   themes: ["docusaurus-theme-openapi-docs"],
 };
 
