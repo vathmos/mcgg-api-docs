@@ -1,0 +1,71 @@
+---
+id: get-commander-by-id
+title: "Get commander by ID"
+description: "Get commander by ID"
+sidebar_label: "Get commander by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVktvGjEQ/ivWnFrJBVr1tDdKI4TUNAhIpArlYNbD4sav2rOoCO1/r2aXEipImqpSe1qv/Y1n5puX90CqylAsYRScU15jynAvIaqkHBL/Fcs9eOUQCjAaJBgPBURFG5CQ8FttEmooKNUoIZcbdAqKPdAuthKesMIETXPP6ByDz5gZ8G4w4I/GXCYTyQS+9miE0EjKWJBQBk/oibEqRmtKxdj+18wC+xONytqbdWvtQXdYfcWSQEJMIWIi0ynufDmiMiXjK2gkxJAoKUMTpyq8TfYcJGEdklMEBdTJsIwpg38xXoKvrVUrix1fjYT6JWoaCWSIpR4JmtfOqbSDRv7OX6MvxYOJPVz1uXYrTJdBB70X2Oo2zk1HX7s2n26uPwwXIGF+O7ub3A0/gYTZ1fzmdja64t3FbLi4Gn+BezZlgzlPg/E0TabEy6Zoo1zw+hlEmVAR6iE9S6lWhG/IOGSROuo/FckPxtp8glcpqR0XBqE73f/DeDyZl79jejhaTO6Y0+lwPucVU2pxi/YJIk9L7oI+8xf5/C9CcLEcOCjtUX4w/l9G58Vs/V92PDRN24TPDtsDCe8H75/rxz6QWIfa61bDr6gxkjh2E7HaiclHkOCQNkFDARW2NPPEKKB/BOb+3ugGJGRM25+Dpu2HsCGKuej3XVlVb1Q0vS2mEm1PxdhXkRPvVwOmKei65B/RXQbsqfHr0LJ28Ph6NB6L4XRyLl6vrCn5SKxDEtdhZSyKETclMVYOxbg2GsUrvuC1bFUYXwmtSLUCG0wBsxR55zFVhpePXkqhvBZt9vVAAnvaaX3bG/QG3dzJ5JR/nE1PEHq5bgm/Uz9axRE+zpOO7OVjj88goTCaR/smZOKz/X6lMmdu0/D2txrTDorlvYStSqar6uUetMm81lCslc14ZsZxPsOr2eE18FqAvGzez5r0XJFbZWv+AwkPuOueFw33rg0qzkvW3h0MyxIjnYicvQQ43seEG18toGl+AFP1/lE=
+sidebar_class_name: "get api-method"
+info_path: docs/mcgg/mcgg-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get commander by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/commanders/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get commander by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Commander detail","content":{"application/json":{"schema":{"allOf":[{"type":"object","properties":{"name":{"type":"string"},"portraitImageUrl":{"type":"string","format":"uri"},"iconImageUrl":{"type":"string","format":"uri","nullable":true},"url":{"type":"string","format":"uri"}},"title":"CommanderSummary"},{"type":"object","properties":{"id":{"type":"integer"},"commanderNumber":{"type":"integer"},"title":{"type":"string"},"type":{"type":"string","enum":["COMBAT","SURVIVAL","RESOURCE","STRATEGY"]},"chessPointPrice":{"type":"integer"},"diamondPrice":{"type":"integer"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"},"skills":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer"},"name":{"type":"string"},"type":{"type":"string","enum":["ACTIVE","PASSIVE"]},"level":{"type":"integer"},"description":{"type":"string"},"imageUrl":{"type":"string","format":"uri","nullable":true},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"CommanderSkill"}},"skins":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer"},"name":{"type":"string"},"imageUrl":{"type":"string","format":"uri"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"CommanderSkin"}}}}],"title":"Commander"}}}},"404":{"description":"Commander not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

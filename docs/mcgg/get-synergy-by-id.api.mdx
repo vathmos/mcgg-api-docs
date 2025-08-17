@@ -1,0 +1,71 @@
+---
+id: get-synergy-by-id
+title: "Get synergy by ID"
+description: "Get synergy by ID"
+sidebar_label: "Get synergy by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VcFu2zAM/RWBpxZQk2zoybeg67IA61q03SnIgbEYR50tqRIdzDD874Pk1E2XFGs3YKfE0qPIRz6SLTAWAbIF3DWGfKEpwFKCQ48VMfl41YLBiiADrUCCNpCBQ96ABE+PtfakIGNfk4SQb6hCyFrgxiULw1SQh65bRnRw1gQKEfBxMok/ikLutWNt47N9DI1QxKhLkJBbw2Q4ItG5UucYkeOHEOHtnj8sy+t1inXn2a4eKGeQ4Lx15Fn3bnsmAyqw16aAToKusKDvvjy8lLC2vkKGDGqvI7Z+C6yTwJpLeqZ1V1cV+gY6+acotTqWQwnsUfMx12TqKhbx8/Tifn79DSTcXn+9hGUnIfeETGp61G4IWSHTGeuKEj+n3msSCIM1Yc8Avccm6oWp2j9/J+Ut+aD7ah/UbJffIzf/g/R+gRP7dLQhb+kf8vCqQHMb+HiKnPVJGPN3SFjn1rwZL8HUZYmryDU2+l+0wBfydtB/l8bBb92RjiWcT85fnwvGsljb2qj09kvMjFiEHW7ViPknkFARb6yCDApKmY5TK4NxeBp141arDqJ6/fZp1iVmsGF2IRuPq7woztDp0ZZ8TuUInRujiyl56f3GW1Xn8UP0j0GkqM3apjTtqF5dzGZiejM/NK9Xpc7jlVhbL67sSpckLjYUgphhRWJWa0XiJD5wKpMLbQqhkDEZ9KqTYmAmRW6rCo0iH6RAo0TS3wj2Ogo+jCajSa+gwBWaZ/0dzeaLkIfaM/3ksStRm73R2Gd6AUM8ICHTKq6WTdLxAtp2hSHKr+vi8WNNvoFssZSwRa97sS1aUDrE/wqyNZaBDqIYNgSc3O620akAeTy6p5Y0sSG3WNbxCyT8oKZfb90ytTAq8sl7fzHNc3K8Z3Kwi2KxB7HNLu+h634B7ZN9YA==
+sidebar_class_name: "get api-method"
+info_path: docs/mcgg/mcgg-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get synergy by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/synergies/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get synergy by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Synergy detail","content":{"application/json":{"schema":{"allOf":[{"type":"object","properties":{"name":{"type":"string"},"imageUrl":{"type":"string","format":"uri"},"url":{"type":"string","format":"uri"}},"title":"SynergySummary"},{"type":"object","properties":{"id":{"type":"integer"},"trait":{"type":"string","enum":["FACTION","ROLE"]},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"},"seasons":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer"},"version":{"type":"string"},"title":{"type":"string"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Season"}},"heroes":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"cost":{"type":"integer"},"portraitImageUrl":{"type":"string","format":"uri"},"iconImageUrl":{"type":"string","format":"uri","nullable":true},"url":{"type":"string","format":"uri"}},"title":"HeroSummary"}}}}],"title":"Synergy"}}}},"404":{"description":"Synergy not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

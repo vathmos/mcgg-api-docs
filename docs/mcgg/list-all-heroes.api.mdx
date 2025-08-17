@@ -1,0 +1,63 @@
+---
+id: list-all-heroes
+title: "List all heroes"
+description: "Returns a list of all heroes with basic info and hyperlinks."
+sidebar_label: "List all heroes"
+hide_title: true
+hide_table_of_contents: true
+api: eJylk0tr3DAQx7+KmFML6nrbo28hlG2ggdDHadnDWJ61lejV0XhbY/zdi+wlm8clEF8saZ7S/zcTCHYZ6j18I46U4aChpWzYJrExQA0/SAYOWaFyNouKR4XOqX7xVn+t9KrBbI2y4RgVhlb1YyJ2NjzkDWhgyimGTBnqCb5st+X3vMD3c9o1ZYkxMQgFKa6YkrMGi2t1n4v/BNn05LGsZEwENSAzjqDBCvn85Dw292QENCSOiVjs2kVAT0+8srANHcylbpYnBhuEOuJiSZGF0cqNx45+s3sdruEY2aNADQPbEmNNDG/21xAG57BxBLXwQLOG4S1lZg1ipUQtAv4cvEceYV4+DZ6kjy3U0NHyDig91FCtTw0aMvGJuOg/rfWgF0m5ripvuu4TJrs5ERtyG0ypwlQafa7eHcd2MGWj1mQwHzQUGJbmz73dXu926uru5nX40DhrikkdI6vb2FhH6rqnnNUOPandYFtSH0qCj3opYUOnWhRcAtabaJXHQNzZsjTRewwtcdYLjwsVBaty07Xq5812s111zeIxXKhYabwQ/rLh6QLneyfjLKzQP6mSQxvgIvoq1B76x6HsFzb3ME0N5oLUPJfjPwPxCPX+oOGEbFeA9odZQ0/YEi/KPtAINVwZQ6lQcEI3LGPzcraKco/E7L7+gnn+D63zaRY=
+sidebar_class_name: "get api-method"
+info_path: docs/mcgg/mcgg-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List all heroes"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/heroes"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns a list of all heroes with basic info and hyperlinks.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of heroes.","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"cost":{"type":"integer"},"portraitImageUrl":{"type":"string","format":"uri"},"iconImageUrl":{"type":"string","format":"uri","nullable":true},"url":{"type":"string","format":"uri"}},"title":"HeroSummary"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

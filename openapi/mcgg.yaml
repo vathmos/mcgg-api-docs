@@ -1,0 +1,318 @@
+openapi: 3.1.0
+info:
+  title: MCGG API
+  description: Public API for Mobile Chess Game Guide (MCGG), serving data for heroes, synergies, commanders, and items.
+  version: 1.0.0
+servers:
+  - url: https://mcgg-api.vercel.app/api
+    description: Production server
+paths:
+  /heroes:
+    get:
+      tags: [Heroes]
+      summary: List all heroes
+      description: Returns a list of all heroes with basic info and hyperlinks.
+      responses:
+        '200':
+          description: List of heroes.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HeroSummary'
+
+  /heroes/{id}:
+    get:
+      tags: [Heroes]
+      summary: Get hero by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Hero detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hero'
+        '404':
+          description: Hero not found
+
+  /synergies:
+    get:
+      tags: [Synergies]
+      summary: List all synergies
+      description: Returns a list of all synergies.
+      responses:
+        '200':
+          description: List of synergies.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SynergySummary'
+
+  /synergies/{id}:
+    get:
+      tags: [Synergies]
+      summary: Get synergy by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Synergy detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Synergy'
+        '404':
+          description: Synergy not found
+
+  /commanders:
+    get:
+      tags: [Commanders]
+      summary: List all commanders
+      description: Returns a list of all commanders.
+      responses:
+        '200':
+          description: List of commanders.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CommanderSummary'
+
+  /commanders/{id}:
+    get:
+      tags: [Commanders]
+      summary: Get commander by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Commander detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Commander'
+        '404':
+          description: Commander not found
+
+components:
+  schemas:
+    HeroSummary:
+      type: object
+      properties:
+        name:
+          type: string
+        cost:
+          type: integer
+        portraitImageUrl:
+          type: string
+          format: uri
+        iconImageUrl:
+          type: string
+          format: uri
+          nullable: true
+        url:
+          type: string
+          format: uri
+
+    Hero:
+      allOf:
+        - $ref: '#/components/schemas/HeroSummary'
+        - type: object
+          properties:
+            id:
+              type: integer
+            skillId:
+              type: integer
+            createdAt:
+              type: string
+              format: date-time
+            updatedAt:
+              type: string
+              format: date-time
+            skill:
+              $ref: '#/components/schemas/HeroSkill'
+            synergies:
+              type: array
+              items:
+                $ref: '#/components/schemas/SynergySummary'
+
+    HeroSkill:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        imageUrl:
+          type: string
+          format: uri
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    SynergySummary:
+      type: object
+      properties:
+        name:
+          type: string
+        imageUrl:
+          type: string
+          format: uri
+        url:
+          type: string
+          format: uri
+
+    Synergy:
+      allOf:
+        - $ref: '#/components/schemas/SynergySummary'
+        - type: object
+          properties:
+            id:
+              type: integer
+            trait:
+              type: string
+              enum: [FACTION, ROLE]
+            createdAt:
+              type: string
+              format: date-time
+            updatedAt:
+              type: string
+              format: date-time
+            seasons:
+              type: array
+              items:
+                $ref: '#/components/schemas/Season'
+            heroes:
+              type: array
+              items:
+                $ref: '#/components/schemas/HeroSummary'
+
+    Season:
+      type: object
+      properties:
+        id:
+          type: integer
+        version:
+          type: string
+        title:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    CommanderSummary:
+      type: object
+      properties:
+        name:
+          type: string
+        portraitImageUrl:
+          type: string
+          format: uri
+        iconImageUrl:
+          type: string
+          format: uri
+          nullable: true
+        url:
+          type: string
+          format: uri
+
+    Commander:
+      allOf:
+        - $ref: '#/components/schemas/CommanderSummary'
+        - type: object
+          properties:
+            id:
+              type: integer
+            commanderNumber:
+              type: integer
+            title:
+              type: string
+            type:
+              type: string
+              enum: [COMBAT, SURVIVAL, RESOURCE, STRATEGY]
+            chessPointPrice:
+              type: integer
+            diamondPrice:
+              type: integer
+            createdAt:
+              type: string
+              format: date-time
+            updatedAt:
+              type: string
+              format: date-time
+            skills:
+              type: array
+              items:
+                $ref: '#/components/schemas/CommanderSkill'
+            skins:
+              type: array
+              items:
+                $ref: '#/components/schemas/CommanderSkin'
+
+    CommanderSkill:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        type:
+          type: string
+          enum: [ACTIVE, PASSIVE]
+        level:
+          type: integer
+        description:
+          type: string
+        imageUrl:
+          type: string
+          format: uri
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    CommanderSkin:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        imageUrl:
+          type: string
+          format: uri
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time

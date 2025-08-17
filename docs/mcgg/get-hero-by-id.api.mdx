@@ -1,0 +1,71 @@
+---
+id: get-hero-by-id
+title: "Get hero by ID"
+description: "Get hero by ID"
+sidebar_label: "Get hero by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VT1v2zAQ/SvETQnA2G6RSVvQFq6HoEHTTkaGs3iWmFAkQ56MCoL+e0HKcZ3abuKlky3y3dfju7seGKsIxRK+UnAU4UGCx4ANMYV03oPFhqAArUCCtlCAR65BQqDnVgdSUHBoSUIsa2oQih6489nCMlUUYBgeEjp6ZyPFBPg4m6UfRbEM2rN2yW1KQChi1AYklM4yWU4w9N7oEhNs+hgTtt8LhsZ8W+dEt2Hd6pFKBgk+OE+B9RhzLGOHihy0rWBIkSIfy1qCd4EDal40WNHPYA7NJaxdaJChgDboZKNLZ9+Nl2BbY3BlaCRxkNC+J8wggTUnq8zafds0GDoY5FskaHW80vikjVmcuCwDIZO64X8mppDpinVDyaT16lyTnMIe/MwKTj7vK5EduddnPO7/YOLvt820JH46S6HasrB1hCFgl9qSqYlvc3eSo3M4OFeg9znvbqfRIY+D/RLzmYTr2fWJoWAdi7VrrcqOXwPmxKJOoFUnFp9BQkNcOwUFVJQZSMOqgGmdx9u012oACZHC5mW+5YKgZvaxmE6bsqqu0OvJhkJJZoLeT9GnVn0d9y441ZbpQ4zOIJWl7dpldrbl3X6az8XN3eLQvF0ZXaYrsXZB3LqVNiQ+1RSjmGNDYt5qReIiObiUOYS2lVDImA3GcqTYqUKK0jUNWkUhSoFWiSyKCUhIlY5RP0xmk9k42SI3aP+I4pDH433D9Iun3qC2e1oYOV7CmBRIKLRKi6TOk3UJfb/CmPQ1DOn4uaXQQbF8kLDBoMfxt+xB6Zj+KyjWaCIdpLBbCXDxfbt7LgXI46m9dIhN/bFB06YvkPBE3bjMhodBQk2oKOTo48VNWZLnPZOD5ZOeeaex+ZcfMAy/AWaAdYA=
+sidebar_class_name: "get api-method"
+info_path: docs/mcgg/mcgg-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get hero by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/heroes/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get hero by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Hero detail","content":{"application/json":{"schema":{"allOf":[{"type":"object","properties":{"name":{"type":"string"},"cost":{"type":"integer"},"portraitImageUrl":{"type":"string","format":"uri"},"iconImageUrl":{"type":"string","format":"uri","nullable":true},"url":{"type":"string","format":"uri"}},"title":"HeroSummary"},{"type":"object","properties":{"id":{"type":"integer"},"skillId":{"type":"integer"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"},"skill":{"type":"object","properties":{"id":{"type":"integer"},"name":{"type":"string"},"description":{"type":"string"},"imageUrl":{"type":"string","format":"uri"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"HeroSkill"},"synergies":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"imageUrl":{"type":"string","format":"uri"},"url":{"type":"string","format":"uri"}},"title":"SynergySummary"}}}}],"title":"Hero"}}}},"404":{"description":"Hero not found"}}}
+>
+  
+</StatusCodes>
+
+
+      
